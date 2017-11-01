@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-
+var multer  = require('multer');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -42,7 +42,6 @@ app.use(session({
 		port : settings.port
 	})
 }));
-
 //app.use('/', index);
 //app.use('/users', users);
 routes(app);
@@ -64,5 +63,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
 
 module.exports = app;
