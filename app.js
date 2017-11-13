@@ -8,7 +8,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var multer  = require('multer');
 
-var index = require('./routes/index');
+
 var users = require('./routes/users');
 
 var routes = require('./routes/index');
@@ -28,6 +28,8 @@ app.use(flash());
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));//加载日志中间件
 app.use(bodyParser.json());//加载解析json的中间件
+//，body-parser模块的作用，是对POST、PUT、DELETE等 HTTP 方法的数据体进行解析。
+//app.use用来将这个模块加载到当前应用。有了这两句，就可以处理POST、PUT、DELETE等请求了。
 app.use(bodyParser.urlencoded({ extended: false }));//加载解析urlencoded请求体的中间件
 app.use(cookieParser());//加载解析cookie的中间件
 app.use(express.static(path.join(__dirname, 'public')));//设置public为存放静态文件的目录
@@ -46,7 +48,7 @@ app.use(session({
 //app.use('/users', users);
 routes(app);
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handler 中间件
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
