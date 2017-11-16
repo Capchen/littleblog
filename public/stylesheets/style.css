@@ -7,7 +7,7 @@ body{
   font-size:14px;
   font-family:"Microsoft YaHei";
   background-image: url(../images/picOne.jpg);
-  background-size:100% 1000px;
+  /*background-size:100% 1000px;*/
   background-repeat:no-repeat;
 }
 p{
@@ -17,6 +17,7 @@ p{
 header{
   padding:.5em 0;
   border-bottom:1px solid #cccccc;
+  /*background-image: url(../images/picOne.jpg);*/
 }
 nav{
   float:left;
@@ -26,6 +27,7 @@ nav{
   margin-left:-12em;
   width:9em;
   text-align:right;
+  /*background-image: url(../images/picOne.jpg);*/
 }
 nav a{
   display:block;
@@ -41,6 +43,7 @@ nav a:hover{
 article{
   font-size:16px;
   padding-top:.5em;
+  /*background-image: url(../images/picOne.jpg);*/
 }
 article a{
   color:#dd0000;
@@ -64,5 +67,25 @@ article a:hover{
   text-decoration:none;
   background-color:#f00;
   color:#fff;
+  -webkit-transition:color .2s linear;
+}
+.prepage a{
+  float:left;
+  text-decoration:none;
+  padding:.5em 1em;
+  color:#ff0000;
+  font-weight:bold;
+}
+.nextpage a{
+  float:right;
+  text-decoration:none;
+  padding:.5em 1em;
+  color:#ff0000;
+  font-weight:bold;
+}
+.prepage a:hover,.nextpage a:hover{
+  text-decoration:none;
+  background-color:#ff0000;
+  color:#f9f9f9;
   -webkit-transition:color .2s linear;
 }
